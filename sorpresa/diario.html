@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuestro diario ✦</title>
+  <meta name="description" content="Día a día, contigo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <canvas id="particles-canvas"></canvas>
+  <div class="bg-overlay"></div>
+
+  <main class="main-wrapper">
+
+    <!-- Nav -->
+    <nav class="top-nav" aria-label="Navegación principal">
+      <a href="index.html" class="nav-link" id="nav-countdown">✦ La espera</a>
+      <div class="nav-divider"></div>
+      <a href="diario.html" class="nav-link active" id="nav-diary">✦ Nuestro diario</a>
+    </nav>
+
+    <!-- Header del diario -->
+    <header class="diary-header">
+      <div class="ornament">— ✦ —</div>
+      <h1 class="diary-title">Nuestro diario</h1>
+      <p class="diary-subtitle">Cada día contigo es una página que guardar para siempre</p>
+    </header>
+
+    <!-- ====================================================
+         ENTRADAS DEL DIARIO
+         ====================================================
+         Para añadir una entrada nueva:
+         1. Copia el bloque <article class="diary-entry">...</article>
+         2. Cambia la fecha, el título, el texto y la imagen.
+         3. Para añadir fotos: pon las imágenes en la carpeta
+            assets/ y referéncialas con src="assets/tu-foto.jpg"
+
+         Las entradas más recientes van ARRIBA (primera del listado).
+         ==================================================== -->
+    <section class="diary-feed" aria-label="Entradas del diario">
+
+      <!-- ════════════════════════════════════
+           ENTRADA 1 — Lunes 10 de agosto
+           ════════════════════════════════════ -->
+      <article class="diary-entry" id="entry-2026-08-10" aria-label="Entrada 10 de agosto">
+
+        <!-- VIDEO DEL DÍA 1 -->
+        <div class="diary-entry-video-wrap">
+          <video
+            id="video-dia1"
+            class="diary-entry-video"
+            controls
+            playsinline
+            preload="metadata"
+            poster="assets/poster-dia1.jpg"
+          >
+            <source src="assets/video-dia1.mp4" type="video/mp4" />
+            <source src="assets/video-dia1.MOV" type="video/quicktime" />
+            Tu navegador no soporta vídeo HTML5.
+          </video>
+        </div>
+
+        <div class="diary-entry-body">
+          <div class="diary-entry-date">Lunes, 10 de agosto de 2026</div>
+
+          <h2 class="diary-entry-title">Día uno — donde las estrellas brillan ✨</h2>
+
+          <p class="diary-entry-text">
+            Mi cielo hermoso, este es el día de inicio para una cuenta atrás que te va a encantar.<br/><br/>
+            Te adoro con mi vida. Tengo la misma emoción que cuando te escribí por primera vez en Instagram
+            y pudimos vernos… te adoro, princesa mía.<br/><br/>
+            Un video para que no me extrañes 🖤
+          </p>
+
+          <span class="diary-entry-tag">✨ Día 1 de 5</span>
+        </div>
+      </article>
+
+
+
+      <!-- ════════════════════════════════════
+           ENTRADA 2 — Martes 11 de agosto
+           (descomenta cuando llegue el día)
+           ════════════════════════════════════ -->
+      <!--
+      <article class="diary-entry" id="entry-2026-08-11">
+        <img src="assets/foto-11ago.jpg" alt="Martes 11 de agosto" class="diary-entry-img" loading="lazy" />
+        <div class="diary-entry-body">
+          <div class="diary-entry-date">Martes, 11 de agosto de 2026</div>
+          <h2 class="diary-entry-title">Segundo día</h2>
+          <p class="diary-entry-text">
+            ✏️  Tu mensaje aquí...
+          </p>
+          <span class="diary-entry-tag">💛 Día 2 de 4</span>
+        </div>
+      </article>
+      -->
+
+
+      <!-- ════════════════════════════════════
+           ENTRADA 3 — Miércoles 12 de agosto
+           ════════════════════════════════════ -->
+      <!--
+      <article class="diary-entry" id="entry-2026-08-12">
+        <img src="assets/foto-12ago.jpg" alt="Miércoles 12 de agosto" class="diary-entry-img" loading="lazy" />
+        <div class="diary-entry-body">
+          <div class="diary-entry-date">Miércoles, 12 de agosto de 2026</div>
+          <h2 class="diary-entry-title">Tercer día</h2>
+          <p class="diary-entry-text">
+            ✏️  Tu mensaje aquí...
+          </p>
+          <span class="diary-entry-tag">🖤 Día 3 de 4</span>
+        </div>
+      </article>
+      -->
+
+
+      <!-- ════════════════════════════════════
+           ENTRADA 4 — Jueves 13 de agosto
+           ════════════════════════════════════ -->
+      <!--
+      <article class="diary-entry" id="entry-2026-08-13">
+        <img src="assets/foto-13ago.jpg" alt="Jueves 13 de agosto" class="diary-entry-img" loading="lazy" />
+        <div class="diary-entry-body">
+          <div class="diary-entry-date">Jueves, 13 de agosto de 2026</div>
+          <h2 class="diary-entry-title">Mañana es el día...</h2>
+          <p class="diary-entry-text">
+            ✏️  Tu mensaje aquí...
+          </p>
+          <span class="diary-entry-tag">✨ Mañana lo es todo</span>
+        </div>
+      </article>
+      -->
+
+
+      <!-- ════════════════════════════════════
+           ENTRADA ESPECIAL — Sábado 14
+           ════════════════════════════════════ -->
+      <!--
+      <article class="diary-entry" id="entry-2026-08-15" style="border-color: rgba(201,168,76,0.5);">
+        <img src="assets/foto-15ago.jpg" alt="El gran día" class="diary-entry-img" loading="lazy" />
+        <div class="diary-entry-body">
+          <div class="diary-entry-date">Sábado, 15 de agosto de 2026</div>
+          <h2 class="diary-entry-title">🎉 ¡Hoy es el día!</h2>
+          <p class="diary-entry-text">
+            ✏️  Tu mensaje especial aquí...
+          </p>
+          <span class="diary-entry-tag">✦ El día más especial</span>
+        </div>
+      </article>
+      -->
+
+    </section>
+
+    <footer class="footer" role="contentinfo">
+      <p class="footer-text">Hecho con todo el amor del mundo, solo para ti 🖤</p>
+    </footer>
+
+  </main>
+
+  <script src="particles.js"></script>
+</body>
+</html>

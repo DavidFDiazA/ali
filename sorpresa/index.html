@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para ti ✨</title>
+  <meta name="description" content="Una cuenta atrás especial, solo para ti." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Canvas para partículas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Fondo con imagen -->
+  <div class="bg-overlay"></div>
+
+  <!-- Contenido principal -->
+  <main class="main-wrapper">
+
+    <!-- Nav entre vistas -->
+    <nav class="top-nav" aria-label="Navegación principal">
+      <a href="index.html" class="nav-link active" id="nav-countdown">✦ La espera</a>
+      <div class="nav-divider"></div>
+      <a href="diario.html" class="nav-link" id="nav-diary">✦ Nuestro diario</a>
+    </nav>
+
+    <!-- Sección de cuenta atrás -->
+    <section class="countdown-section" aria-labelledby="main-title">
+
+      <!-- Partícula decorativa arriba -->
+      <div class="ornament">— ✦ —</div>
+
+      <h1 id="main-title" class="main-title">
+        <span class="title-pretext">Faltan solo...</span>
+      </h1>
+
+      <!-- Contador -->
+      <div class="countdown-grid" id="countdown-grid" role="timer" aria-live="polite" aria-label="Cuenta atrás">
+        <div class="time-unit" id="unit-days">
+          <div class="time-number" id="days">00</div>
+          <div class="time-label">días</div>
+        </div>
+        <div class="time-separator" aria-hidden="true">:</div>
+        <div class="time-unit" id="unit-hours">
+          <div class="time-number" id="hours">00</div>
+          <div class="time-label">horas</div>
+        </div>
+        <div class="time-separator" aria-hidden="true">:</div>
+        <div class="time-unit" id="unit-minutes">
+          <div class="time-number" id="minutes">00</div>
+          <div class="time-label">minutos</div>
+        </div>
+        <div class="time-separator" aria-hidden="true">:</div>
+        <div class="time-unit" id="unit-seconds">
+          <div class="time-number" id="seconds">00</div>
+          <div class="time-label">segundos</div>
+        </div>
+      </div>
+
+      <!-- Mensaje debajo del contador -->
+      <p class="subtitle">
+        para el momento que llevo planeando con todo mi corazón.
+      </p>
+
+      <!-- Fecha destino -->
+      <div class="target-date">
+        <span class="date-label">Sábado</span>
+        <span class="date-number">15</span>
+        <span class="date-label">de agosto</span>
+      </div>
+
+      <!-- CTA al diario -->
+      <a href="diario.html" class="cta-btn" id="cta-diary">
+        <span class="cta-text">Ver nuestro diario</span>
+        <span class="cta-arrow">→</span>
+      </a>
+
+      <!-- Mensaje de llegada (oculto hasta que llega la fecha) -->
+      <div class="arrived-message hidden" id="arrived-message" role="alert">
+        <div class="arrived-ornament">✦</div>
+        <p class="arrived-text">¡Ha llegado el día! 🎉<br/>Hoy es para ti.</p>
+        <div class="arrived-ornament">✦</div>
+      </div>
+
+    </section>
+
+    <!-- Firma -->
+    <footer class="footer" role="contentinfo">
+      <p class="footer-text">Hecho con todo el amor del mundo, solo para ti 🖤</p>
+    </footer>
+
+  </main>
+
+  <script src="particles.js"></script>
+  <script src="countdown.js"></script>
+</body>
+</html>
