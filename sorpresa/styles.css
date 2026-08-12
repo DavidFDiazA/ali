@@ -522,7 +522,282 @@ body {
   letter-spacing: 0.1em;
 }
 
+/* ===================== TARRO DE NOTAS ===================== */
+
+.tarro-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 1rem 2rem;
+  text-align: center;
+  animation: fadeInUp 1s ease-out both;
+}
+
+.tarro-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--white-soft);
+}
+
+.tarro-sub {
+  font-size: 0.85rem;
+  color: var(--white-dim);
+  letter-spacing: 0.08em;
+  margin-top: -0.4rem;
+}
+
+.tarro-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+/* ---- Botón / tarro ---- */
+.tarro-jar {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.tarro-jar:hover  { transform: scale(1.06); }
+.tarro-jar:active { transform: scale(0.97); }
+
+/* Shake al tocar */
+.tarro-jar.tarro-shake {
+  animation: jar-shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes jar-shake {
+  10%, 90%  { transform: rotate(-2deg) scale(1.04); }
+  20%, 80%  { transform: rotate(3deg)  scale(1.06); }
+  30%, 50%, 70% { transform: rotate(-3deg) scale(1.05); }
+  40%, 60%  { transform: rotate(3deg)  scale(1.04); }
+  100%      { transform: rotate(0deg)  scale(1); }
+}
+
+/* ---- Piezas del tarro ---- */
+.jar-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter: drop-shadow(0 8px 24px rgba(201,168,76,0.3));
+}
+
+.jar-lid {
+  width: 72px;
+  height: 14px;
+  background: linear-gradient(to bottom, #8b6914, #c9a84c);
+  border-radius: 6px 6px 2px 2px;
+  margin-bottom: -2px;
+  position: relative;
+  z-index: 2;
+}
+
+.jar-neck {
+  width: 54px;
+  height: 10px;
+  background: linear-gradient(to bottom,
+    rgba(201,168,76,0.15),
+    rgba(201,168,76,0.08));
+  border: 1px solid rgba(201,168,76,0.35);
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  z-index: 1;
+}
+
+.jar-glass {
+  width: 110px;
+  height: 130px;
+  background: linear-gradient(160deg,
+    rgba(201,168,76,0.12) 0%,
+    rgba(45,24,84,0.6) 50%,
+    rgba(201,168,76,0.08) 100%);
+  border: 1.5px solid rgba(201,168,76,0.4);
+  border-top: none;
+  border-radius: 8px 8px 18px 18px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+.jar-shine {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  width: 18px;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.15), transparent);
+  border-radius: 50%;
+  transform: rotate(-10deg);
+}
+
+/* Corazoncitos flotantes dentro del tarro */
+.jar-heart {
+  font-size: 1.4rem;
+  animation: heart-float 3s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+.jar-heart.delay1 { animation-delay: 1s; font-size: 1.1rem; }
+.jar-heart.delay2 { animation-delay: 2s; font-size: 0.9rem; }
+
+@keyframes heart-float {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.9; }
+  50%       { transform: translateY(-8px) scale(1.1); opacity: 1; }
+}
+
+/* ---- Hint y contador ---- */
+.tarro-hint {
+  font-size: 0.7rem;
+  color: var(--white-ghost);
+  letter-spacing: 0.15em;
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.tarro-counter {
+  font-size: 0.72rem;
+  color: var(--gold-dim);
+  letter-spacing: 0.1em;
+  min-height: 1.2em;
+}
+
+/* ====== TARJETA DE NOTA ====== */
+#nota-card {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  margin-top: 1.2rem;
+  animation: nota-entra 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes nota-entra {
+  from { opacity: 0; transform: translateY(-30px) rotate(-3deg) scale(0.85); }
+  to   { opacity: 1; transform: translateY(0) rotate(0deg) scale(1); }
+}
+
+#nota-card.nota-saliendo {
+  animation: nota-sale 0.35s ease-in forwards;
+}
+
+@keyframes nota-sale {
+  to { opacity: 0; transform: translateY(-20px) scale(0.9); }
+}
+
+.nota-inner {
+  position: relative;
+  background: linear-gradient(160deg, #fdfaf2, #f5edcc);
+  border-radius: 4px;
+  padding: 2rem 1.8rem 1.6rem;
+  box-shadow:
+    0 4px 6px rgba(0,0,0,0.3),
+    0 12px 40px rgba(0,0,0,0.5),
+    inset 0 0 0 1px rgba(201,168,76,0.2);
+  overflow: hidden;
+}
+
+/* Líneas del papel */
+.nota-lines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 27px,
+    rgba(201,168,76,0.15) 28px
+  );
+  pointer-events: none;
+}
+
+/* Línea roja izquierda estilo libreta */
+.nota-inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 2.6rem;
+  width: 1px;
+  height: 100%;
+  background: rgba(220, 80, 80, 0.25);
+}
+
+.nota-emoji {
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.nota-texto {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.97rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: #2a1a0a;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1.4rem;
+}
+
+.nota-actions {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
+}
+
+.nota-btn-otra {
+  padding: 0.55rem 1.4rem;
+  background: linear-gradient(135deg, #c9a84c, #f0d080);
+  border: none;
+  border-radius: 4px;
+  color: #1a0a00;
+  font-size: 0.82rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  font-family: 'Outfit', sans-serif;
+}
+
+.nota-btn-otra:hover { opacity: 0.88; transform: translateY(-1px); }
+
+.nota-btn-cerrar {
+  padding: 0.55rem 1.2rem;
+  background: transparent;
+  border: 1px solid rgba(42, 26, 10, 0.25);
+  border-radius: 4px;
+  color: rgba(42, 26, 10, 0.6);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Outfit', sans-serif;
+}
+
+.nota-btn-cerrar:hover {
+  border-color: rgba(42,26,10,0.5);
+  color: rgba(42,26,10,0.9);
+}
+
 /* ===================== RESPONSIVE ===================== */
+
 @media (max-width: 640px) {
   .countdown-grid { gap: 0.25rem; }
   .time-unit { min-width: 72px; }

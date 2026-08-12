@@ -88,6 +88,44 @@
 
     </section>
 
+    <!-- ══════════════════════════════════════════
+         TARRO DE NOTAS DE AMOR
+         ══════════════════════════════════════════ -->
+    <section class="tarro-section" aria-labelledby="tarro-title">
+
+      <div class="ornament" aria-hidden="true">— ✦ —</div>
+      <h2 id="tarro-title" class="tarro-heading">Tarro de notas</h2>
+      <p class="tarro-sub">Toca el tarro cuando me extrañes 🫙</p>
+
+      <div id="tarro-wrapper" class="tarro-wrapper">
+
+        <!-- El tarro -->
+        <button
+          id="tarro-jar"
+          class="tarro-jar"
+          aria-label="Abrir una nota de amor"
+          title="Toca para abrir una nota"
+        >
+          <!-- Tarro dibujado en CSS -->
+          <div class="jar-body" aria-hidden="true">
+            <div class="jar-neck"></div>
+            <div class="jar-lid"></div>
+            <div class="jar-glass">
+              <span class="jar-heart">💛</span>
+              <span class="jar-heart delay1">💛</span>
+              <span class="jar-heart delay2">💛</span>
+              <div class="jar-shine"></div>
+            </div>
+          </div>
+        </button>
+
+        <div class="tarro-hint" aria-hidden="true">↑ toca aquí</div>
+        <div id="tarro-counter" class="tarro-counter" data-count="0" aria-live="polite"></div>
+
+      </div><!-- /tarro-wrapper -->
+
+    </section>
+
     <!-- Firma -->
     <footer class="footer" role="contentinfo">
       <p class="footer-text">Hecho con todo el amor del mundo, solo para ti</p>
@@ -97,6 +135,7 @@
 
   <script src="particles.js"></script>
   <script src="countdown.js"></script>
+  <script src="tarro.js"></script>
   <script src="modal-cupon.js"></script>
 </body>
 </html>
