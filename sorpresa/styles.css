@@ -469,6 +469,22 @@ body {
   font-weight: 200;
 }
 
+/* Variante poema — centrado y con más respiro */
+.diary-entry-poem {
+  text-align: center;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-style: normal;
+  line-height: 2;
+  color: rgba(245, 240, 255, 0.82);
+}
+
+.diary-entry-poem em {
+  color: var(--gold-light);
+  opacity: 0.9;
+}
+
+
 /* Galería de fotos en entrada */
 .diary-entry-gallery {
   display: grid;
