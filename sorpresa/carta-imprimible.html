@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carta para mi princesa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #fdfaf2;
+      --text-color: #2a1a0a;
+      --gold: #c9a84c;
+      --gold-light: #f0d080;
+    }
+
+    body {
+      background-color: #e8e3d3;
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--text-color);
+      margin: 0;
+    }
+
+    .carta-container {
+      background-color: var(--bg-color);
+      width: 100%;
+      max-width: 800px;
+      padding: 4rem 5rem;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+      position: relative;
+      background-image: 
+        radial-gradient(circle at top left, rgba(201, 168, 76, 0.05), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(201, 168, 76, 0.05), transparent 40%);
+    }
+
+    /* Bordes elegantes */
+    .carta-container::before {
+      content: '';
+      position: absolute;
+      top: 1.5rem; left: 1.5rem; right: 1.5rem; bottom: 1.5rem;
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      pointer-events: none;
+    }
+
+    .carta-container::after {
+      content: '';
+      position: absolute;
+      top: 2rem; left: 2rem; right: 2rem; bottom: 2rem;
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      pointer-events: none;
+    }
+
+    .fecha {
+      text-align: right;
+      font-style: italic;
+      font-size: 1.2rem;
+      margin-bottom: 3rem;
+      color: #5a4a3a;
+    }
+
+    .saludo {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5rem;
+      color: var(--gold);
+      margin-bottom: 2.5rem;
+      text-align: center;
+      line-height: 1;
+    }
+
+    .cuerpo {
+      font-size: 1.35rem;
+      line-height: 1.9;
+      text-align: justify;
+      color: #3a2a1a;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cuerpo p {
+      margin-bottom: 1.8rem;
+    }
+
+    .cuerpo p:first-of-type::first-letter {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      color: var(--gold);
+      float: left;
+      line-height: 0.8;
+      padding-right: 0.5rem;
+      padding-top: 0.5rem;
+    }
+
+    .despedida {
+      margin-top: 4rem;
+      text-align: right;
+      font-size: 1.4rem;
+      font-style: italic;
+    }
+
+    .firma {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: var(--gold);
+      text-align: right;
+      margin-top: 0.5rem;
+    }
+
+    /* Controles de impresión en pantalla */
+    .print-controls {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      text-align: center;
+    }
+
+    .btn-print {
+      background: linear-gradient(135deg, #c9a84c, #f0d080);
+      border: none;
+      padding: 1rem 2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1a0a00;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(201,168,76,0.4);
+      transition: transform 0.2s;
+    }
+
+    .btn-print:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Reglas para cuando se mande a imprimir físicamente */
+    @media print {
+      body {
+        background-color: white;
+        padding: 0;
+      }
+      .carta-container {
+        box-shadow: none;
+        padding: 2rem;
+        max-width: 100%;
+        background-image: none;
+      }
+      .print-controls {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .carta-container { padding: 3rem 2rem; }
+      .saludo { font-size: 2.8rem; }
+      .cuerpo { font-size: 1.15rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="carta-container">
+    <div class="fecha">Sábado, 15 de agosto de 2026</div>
+
+    <div class="saludo">Para mi princesa hermosa...</div>
+
+    <div class="cuerpo">
+      <p>
+        Siento la misma emoción latiendo en mi pecho que aquel día en que te escribí por primera vez y, al fin, pudimos vernos frente a frente. Desde ese instante mi cielo se iluminó y supe que había encontrado mi lugar. Hoy, que nuestro día tan esperado ha llegado, quiero dejar por escrito todo lo que significas para mí.
+      </p>
+      
+      <p>
+        Despertar a tu lado —o saber que estás ahí aunque nos separen kilómetros— es mi mayor motivación cada mañana. Tienes una visión del mundo increíble, un talento que admiro profundamente y una belleza que me sigue dejando sin aliento. Cada día me repito la inmensa suerte que tengo al poder decir: <em>"carajo, tengo a la mejor esposa del mundo"</em>. Eres la mujer maravillosa con la que siempre quiero estar.
+      </p>
+
+      <p>
+        Cuando pienso en nuestro futuro, no puedo evitar sonreír. ¿Recuerdas cuando soñábamos despiertos con los nombres de nuestros hijos? Desde ese día me enamoré de la idea de ver correr a Luciano y de abrazar a nuestra princesa Victoria. Sueño con el momento en que eso sea nuestra realidad. Mientras tanto, me hace inmensamente feliz seguir construyendo nuestro castillo, forjando juntos nuestro imperio, unidos como el mejor equipo.
+      </p>
+
+      <p>
+        Mi vida a tu lado es un remanso de paz. A tu lado quedaron atrás el frío y las dudas, porque en cada abrazo tuyo encuentro el hogar y el puerto donde siempre anhelo anclar mi corazón. No pido riquezas ni fama, tan solo quiero crecer contigo, sembrar este amor y pasar todas mis vidas escribiendo nuestra historia juntos.
+      </p>
+
+      <p>
+        Todos los días le pido a Dios que tus sueños se conviertan en mis metas, y haré todo lo posible para verte alcanzar cada uno de tus logros. Porque tú eres mi propósito, eres mi vida y quien me hace vivirla al máximo.
+      </p>
+    </div>
+
+    <div class="despedida">Con todo mi amor, hoy y siempre,</div>
+    <div class="firma">Tu príncipe</div>
+  </div>
+
+  <div class="print-controls">
+    <button class="btn-print" onclick="window.print()">🖨️ Imprimir Carta</button>
+  </div>
+
+</body>
+</html>
