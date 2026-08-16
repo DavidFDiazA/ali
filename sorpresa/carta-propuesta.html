@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Propuesta para mi Princesa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Pinyon+Script&family=Outfit:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #fdfbf7;
+      --text-color: #2c251d;
+      --gold: #d4af37;
+      --gold-dark: #aa8620;
+    }
+
+    body {
+      background-color: #eae5d9;
+      display: flex;
+      justify-content: center;
+      padding: 3rem 1rem;
+      font-family: 'Outfit', sans-serif;
+      color: var(--text-color);
+      margin: 0;
+    }
+
+    .carta-container {
+      background-color: var(--bg-color);
+      width: 100%;
+      max-width: 850px;
+      padding: 5rem 6rem;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.1);
+      position: relative;
+      background-image: 
+        radial-gradient(circle at top right, rgba(212, 175, 55, 0.05), transparent 40%),
+        radial-gradient(circle at bottom left, rgba(212, 175, 55, 0.05), transparent 40%);
+      box-sizing: border-box;
+    }
+
+    /* Marcos dorados dobles muy elegantes */
+    .carta-container::before {
+      content: '';
+      position: absolute;
+      top: 1.5rem; left: 1.5rem; right: 1.5rem; bottom: 1.5rem;
+      border: 1.5px solid var(--gold);
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .carta-container::after {
+      content: '';
+      position: absolute;
+      top: 2rem; left: 2rem; right: 2rem; bottom: 2rem;
+      border: 1px solid var(--gold);
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .ornament-top {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 2rem;
+    }
+
+    .saludo {
+      font-family: 'Pinyon Script', cursive;
+      font-size: 4rem;
+      color: var(--gold-dark);
+      margin-bottom: 2.5rem;
+      text-align: center;
+      line-height: 1;
+    }
+
+    .cuerpo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      line-height: 2;
+      text-align: justify;
+      color: #3b332b;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cuerpo p {
+      margin-bottom: 2rem;
+    }
+
+    .cuerpo p:first-of-type::first-letter {
+      font-family: 'Pinyon Script', cursive;
+      font-size: 4.5rem;
+      color: var(--gold-dark);
+      float: left;
+      line-height: 0.7;
+      padding-right: 0.8rem;
+      padding-top: 0.5rem;
+    }
+
+    .pregunta-final {
+      text-align: center;
+      margin-top: 5rem;
+      font-family: 'Pinyon Script', cursive;
+      font-size: 4.5rem;
+      color: var(--gold-dark);
+      line-height: 1.2;
+    }
+
+    /* Controles de impresión */
+    .print-controls {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      text-align: center;
+      z-index: 100;
+    }
+
+    .btn-print {
+      background: linear-gradient(135deg, #d4af37, #f3e5ab);
+      border: none;
+      padding: 1rem 2rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-print:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+    }
+
+    /* Reglas para imprimir o exportar a PDF */
+    @media print {
+      @page {
+        margin: 0;
+        size: letter;
+      }
+      body {
+        background-color: white;
+        padding: 0;
+      }
+      .carta-container {
+        box-shadow: none;
+        padding: 4rem 5rem;
+        max-width: 100%;
+        min-height: 100vh;
+        background-image: none;
+      }
+      .print-controls {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .carta-container { padding: 3rem 2rem; }
+      .saludo { font-size: 3rem; }
+      .cuerpo { font-size: 1.1rem; }
+      .pregunta-final { font-size: 3rem; margin-top: 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="carta-container">
+    <div class="ornament-top">✨</div>
+
+    <div class="saludo">Mi amor,</div>
+
+    <div class="cuerpo">
+      <p>
+        Aún recuerdo con perfecta claridad el día en que un simple mensaje cruzó nuestras vidas. Quién iba a decir que aquel primer "hola" detrás de una pantalla se convertiría en la historia más hermosa que he vivido. Desde el instante en que nuestras miradas se encontraron por primera vez, algo dentro de mí supo que el destino por fin me había llevado al lugar correcto.
+      </p>
+      
+      <p>
+        Hoy, mirándote, me doy cuenta de cuánto te admiro. Me fascina la forma en la que entiendes el mundo, tu luz inagotable y ese talento tuyo que hace que todo parezca mágico. Me enamoras todos los días, no solo por lo bellísima que eres, sino por la inmensa nobleza de tu alma. Eres mi refugio, ese espacio de calma donde el ruido del mundo desaparece y al que siempre, sin dudarlo, quiero volver.
+      </p>
+
+      <p>
+        Me llena de ilusión cerrar los ojos e imaginar todo lo que nos espera. Visualizar nuestra casa llena de risas, nuestros futuros hijos corriendo por los pasillos, y nosotros, codo a codo, construyendo paso a paso la vida que siempre hemos soñado. Eres la compañera perfecta para edificar no solo una familia, sino nuestro propio imperio.
+      </p>
+
+      <p>
+        Quiero que sepas que mis mayores anhelos hoy llevan tu nombre. Mi misión más importante es hacerte inmensamente feliz, apoyarte en cada uno de tus vuelos y celebrar cada uno de tus logros como si fueran míos. Porque tú le has dado un nuevo sentido a mis días y me has enseñado lo que significa el amor incondicional.
+      </p>
+
+      <p>
+        Estoy convencido de que la eternidad se queda corta para todo lo que quiero vivir a tu lado. Quiero despertar viéndote sonreír cada mañana, cuidarte en cada paso y ser tu abrazo seguro cada noche, hoy y por el resto de mi vida.
+      </p>
+
+      <p style="text-align: center; font-style: italic; margin-top: 3rem;">
+        Por todo lo que hemos construido juntos y por el maravilloso destino que nos espera...
+      </p>
+    </div>
+
+    <div class="pregunta-final">
+      Y te tengo una pregunta.
+    </div>
+  </div>
+
+  <div class="print-controls">
+    <button class="btn-print" onclick="window.print()">🖨️ Guardar como PDF / Imprimir</button>
+  </div>
+
+</body>
+</html>
